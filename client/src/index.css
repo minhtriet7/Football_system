@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Định nghĩa màu nền mặc định cho web ở đây */
+body {
+  background-color: #f9fafb;
+}

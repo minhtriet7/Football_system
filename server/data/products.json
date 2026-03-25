@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Bò húc Redbull (Lon)",
+    "slug": "bo-huc-redbull-lon",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 100,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/6-lon-nuoc-tang-luc-redbull-thai-kem-va-vitamin-250ml_202505261547195951_unznoz.jpg"
+  },
+  {
+    "name": "Nước khoáng Lavie",
+    "slug": "nuoc-khoang-lavie",
+    "price": 10000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 50,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370776/6-chai-nuoc-bu-khoang-revive-muoi-khoang-500ml-202103312248177034_lgj1oi.jpg"
+  },
+  {
+    "name": "Nước bù khoáng Revive",
+    "slug": "nuoc-bu-khoang-revive",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 80,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370776/6-chai-nuoc-bu-khoang-revive-muoi-khoang-500ml-202103312248177034_lgj1oi.jpg"
+  },
+  {
+    "name": "Nước tăng lực Sting Vàng",
+    "slug": "nuoc-tang-luc-sting-vang",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 60,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370869/nuoc-tang-luc-sting-vang-loc-6-lon-330ml_202509291608252838_synw1n.jpg"
+  },
+  {
+    "name": "Nước tăng lực Sting Dâu",
+    "slug": "nuoc-tang-luc-sting-dau",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 60,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370869/nuoc-tang-luc-sting-vi-dau-loc-6-lon-cao-330ml_202509291513317781_t47wv6.jpg"
+  },
+  {
+    "name": "Nước bù khoáng Revive chanh muối",
+    "slug": "nuoc-bu-khoang-revive-chanh-muoi",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 40,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/7up-revive-chanh-muoi-chai-390ml-th24_202508220833172410_xrgrdr.jpg"
+  },
+  {
+    "name": "Mì tôm trứng xúc xích",
+    "slug": "mi-tom-trung-xuc-xich",
+    "price": 25000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 20,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/thung-12-to-mi-tron-handy-hao-hao-huong-vi-tom-chua-cay-93g-202207270936026356_xdgjxi.jpg"
+  },
+  {
+    "name": "Mì tôm trứng xúc xích",
+    "slug": "mi-tom-trung-xuc-xich",
+    "price": 25000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 20,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370797/mi-an-lien-mini-handy-hao-hao-vi-tom-chua-cay-ly-47g-202007020813289995_plx1rf.jpg"
+  },
+  {
+    "name": "Bánh mì ốp la xúc xích",
+    "slug": "banh-mi-op-la-xuc-xich",
+    "price": 20000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 15,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/1000x800zmaxbanh-mi-kep-trung-4071_mpmrrc.jpg"
+  },
+  {
+    "name": "Xúc xích nướng đá (Cây)",
+    "slug": "xuc-xich-nuong-da-cay",
+    "price": 15000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/lap-xuong-nuong-da-hot-trend-co-tot-cho-suc-khoe-khong-202402031141558657_ryddfo.jpg"
+  },
+  {
+    "name": "Xoài keo (Túi 1kg)",
+    "slug": "xoai-keo-tui-1kg",
+    "price": 15000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/xoai-keo-tui-1kg-202012311612453441_zrrhc2.jpg"
+  },
+  {
+    "name": "Chuối",
+    "slug": "chuoi",
+    "price": 15000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/chuoi-gia-giong-nam-my-1kg-202012021040379843_qadiyz.jpg"
+  },
+  {
+    "name": "Mận",
+    "slug": "man",
+    "price": 15000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370779/man-an-phuoc-1kg-202011041104269773_txniox.jpg"
+  },
+  {
+    "name": "Dưa hấu cắt sẵn (Hộp)",
+    "slug": "dua-hau-cat-san-hop",
+    "price": 15000,
+    "categoryName": "Đồ ăn nhẹ",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/dua-hau-do-trai-25-27kg-1-trai_202506020859550694_weuilo.jpg"
+  },
+  {
+    "name": "Nước giải khát Pepsi Cola (Chai)",
+    "slug": "nuoc-giai-khat-pepsi-cola-chai",
+    "price": 15000,
+    "categoryName": "Nước giải khát",
+    "countInStock": 30,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/6-chai-nuoc-ngot-pepsi-cola-390ml-202405131544132338_uyszwa.jpg"
+  }
+  
+]

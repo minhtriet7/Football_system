@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Admin Chủ Sân",
+    "phone": "0999999999",
+    "password": "password123",
+    "role": "admin"
+  },
+  {
+    "name": "Khách hàng Test",
+    "phone": "0888888888",
+    "password": "password123",
+    "role": "user"
+  }
+]

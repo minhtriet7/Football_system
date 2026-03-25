@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Thuê trọng tài bắt chính",
+    "slug": "thue-trong-tai-bat-chinh",
+    "price": 200000,
+    "description": "Trọng tài chuyên nghiệp bắt chính cho 1 trận đấu (90 phút).",
+    "categoryName": "Hỗ trợ trận đấu",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371352/songkran_bunmeekiart_i0xa7l.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371351/images956685_8_trong_tai_qtsvtp.jpg"
+    ]
+  },
+
+  {
+    "name": "Quay phim & Hightlight trận đấu",
+    "slug": "quay-phim-hightlight-tran-dau",
+    "price": 500000,
+    "description": "Quay phim toàn trận bằng Flycam và cắt ghép các bàn thắng đẹp.",
+    "categoryName": "Hỗ trợ trận đấu",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371412/TR9-4_rwvaoy.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371411/a3_EHCR_slgoai.jpg"
+    ]
+  },
+
+  {
+    "name": "Bình luận viên trực tiếp",
+    "slug": "binh-luan-vien-truc-tiep",
+    "price": 400000,
+    "description": "BLV khuấy động không khí trận đấu, có kèm hệ thống loa công suất cao tại sân.",
+    "categoryName": "Hỗ trợ trận đấu",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371860/binh-luan-vien_TDFA_f4twdy.jpg"
+  },
+  {
+    "name": "Giặt ủi đồng phục đội",
+    "slug": "giat-ui-dong-phuc-doi",
+    "price": 50000,
+    "description": "Thu gom và giặt sạch bộ đồ của cả đội sau khi đá xong (tối đa 15 bộ).",
+    "categoryName": "Tiện ích sân",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371554/dich-vu-giat-ui-giao-nhan-tan-noi-2_vbqwxk.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371553/giat-ui-binh-duong_lyv1yv.jpg"
+    ]
+  },
+  {
+    "name": "Gói trà đá & Khăn lạnh (Cả đội)",
+    "slug": "goi-tra-da-khan-lanh-ca-doi",
+    "price": 30000,
+    "description": "Phục vụ 1 bình trà đá siêu tốc và 10 khăn lạnh ướp đá tại sân.",
+    "categoryName": "Tiện ích sân",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371501/images_bs3trd.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371498/phuoc-ngoc-khan-lanh-in-lua-0033-06_1729824592_avobb2.jpg"
+    ]
+  },
+  {
+    "name": "Bộ sơ cứu y tế & Bình xịt lạnh",
+    "slug": "bo-so-cuu-y-te-binh-xit-lanh",
+    "price": 20000,
+    "description": "Cung cấp bình xịt lạnh giảm đau chấn thương và bông băng sơ cứu cơ bản.",
+    "categoryName": "Tiện ích sân",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371467/phu-kien-chinh-hang-chai-xit-lanh-150ml-starbalm-xanh-2_abda8cbde86c4727a44cd75b49e83b6d_st0cat.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371469/phu-kien-chinh-hang-chai-xit-lanh-150ml-starbalm-xanh-1_696e88eea7d346d6b3325bc060605541_r4difs.jpg"
+    ]
+  },
+
+  {
+    "name": "Cúp & Cờ lưu niệm (Bán đứt)",
+    "slug": "cup-co-luu-niem-ban-dut",
+    "price": 250000,
+    "description": "Cung cấp cúp kim loại và cờ lưu niệm in sẵn cho đội thắng cuộc.",
+    "categoryName": "Tiện ích sân",
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371602/product-379_zdl0jj.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371601/images_aywyht.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371618/co-luu-niem-30cm-40cm_ecwpuk.jpg"
+    ]
+  },
+  {
+    "name": "Thuê áo Bib (Bộ 10 áo)",
+    "slug": "thue-ao-bib-bo-10-ao",
+    "price": 30000,
+    "categoryName": "Tiện ích sân",
+    "countInStock": 10,
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371657/85e8422c7d3f1c823a69bf7b879f5a76_1_rqbitd.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371644/ao-luoi-tron-team-building_glekwb.jpg"
+    ]
+  },
+  {
+    "name": "Thuê bóng thi đấu (Động Lực)",
+    "slug": "thue-bong-thi-dau-dong-luc",
+    "price": 50000,
+    "categoryName": "Tiện ích sân",
+    "countInStock": 15,
+    "imageUrl": "https://domain.com/images/products/bong-da.jpg"
+  },
+  {
+    "name": "Thuê giày đá bóng (Đinh TF)",
+    "slug": "thue-giay-da-bong-dinh-tf",
+    "price": 40000,
+    "categoryName": "Tiện ích sân",
+    "countInStock": 20,
+    "imageUrl": [
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371704/qua-bong-da-so-4-akpro-af3800-trang-_3_uwg3e5.jpg",
+      "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371706/9388a3394a3f43aaa1c3376742e158b9_21aa49e738624cc08b360793a933c3c1_master_abfsua.jpg"
+    ]
+  },
+  {
+    "name": "Tất/Vớ chống trượt (Bán đứt)",
+    "slug": "tat-vo-chong-truot-ban-dut",
+    "price": 35000,
+    "categoryName": "Tiện ích sân",
+    "countInStock": 50,
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371780/tat-da-banh-vo-bong-da-chong-truot-1_xihqya.jpg"
+  }
+]

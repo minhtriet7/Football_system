@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Sân bóng",
+    "slug": "san-bong",
+    "type": "field",
+    "parentName": null,
+    "description": "Đặt lịch các loại sân cỏ nhân tạo đạt chuẩn",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371300/the-ball-stadion-football-the-pitch-46798_joybzl.jpg"
+  },
+  {
+    "name": "Sản phẩm",
+    "slug": "san-pham",
+    "type": "product",
+    "parentName": null,
+    "description": "Mua đồ ăn, nước uống nạp năng lượng",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371260/20_ram7vy.jpg"
+  },
+  {
+    "name": "Dịch vụ đi kèm",
+    "slug": "dich-vu-di-kem",
+    "type": "service",
+    "parentName": null,
+    "description": "Tiện ích hỗ trợ tại sân",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371134/images_j9vphg.jpg"
+  },
+
+  {
+    "name": "Sân 5 người",
+    "slug": "san-5-nguoi",
+    "type": "field",
+    "parentName": "Sân bóng",
+    "description": "Sân nhỏ mini phù hợp cho đội ít người",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371209/chien-thuat-bong-da-banner_o8r6dz.jpg"
+  },
+  {
+    "name": "Sân 7 người",
+    "slug": "san-7-nguoi",
+    "type": "field",
+    "parentName": "Sân bóng",
+    "description": "Sân thi đấu bán chuyên rộng rãi",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371224/kich-thuoc-san-bong-da-7-nguoi-co-nhan-tao-1-1-800x800_epozz2.jpg"
+  },
+
+  {
+    "name": "Nước giải khát",
+    "slug": "nuoc-giai-khat",
+    "type": "product",
+    "parentName": "Sản phẩm",
+    "description": "Các loại nước ngọt, nước khoáng ướp lạnh",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371195/tong-quan-thi-truong-nghanh-nuoc-giai-khat-viet-nam-1_lvaekm.jpg"
+  },
+  {
+    "name": "Đồ ăn nhẹ",
+    "slug": "do-an-nhe",
+    "type": "product",
+    "parentName": "Sản phẩm",
+    "description": "Mì tôm, xúc xích, bánh mì",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371155/kinh-doanh-%C4%91%E1%BB%93-%C4%83n-v%E1%BA%B7t-m%C3%B9a-%C4%91%C3%B4ng_fx8nwg.jpg"
+  },
+
+  {
+    "name": "Hỗ trợ trận đấu",
+    "slug": "ho-tro-tran-dau",
+    "type": "service",
+    "parentName": "Dịch vụ đi kèm",
+    "description": "Thuê trọng tài chuyên nghiệp, quay phim highlight",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371155/kinh-doanh-%C4%91%E1%BB%93-%C4%83n-v%E1%BA%B7t-m%C3%B9a-%C4%91%C3%B4ng_fx8nwg.jpg"
+  },
+  {
+    "name": "Tiện ích sân",
+    "slug": "tien-ich-san",
+    "type": "service",
+    "parentName": "Dịch vụ đi kèm",
+    "description": "Cho thuê áo Bib, bóng, giày và các dịch vụ hỗ trợ như trà đá, giặt ủi...",
+    "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371268/bd-1542282811-1542282826-4677-1542282836_qbgddb.jpg"
+  }
+]
