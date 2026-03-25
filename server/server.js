@@ -23,7 +23,6 @@ const app = express();
 // Middleware cơ bản
 app.use(cors({
   origin: process.env.CLIENT_URL,
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
 app.use(express.json());
@@ -42,7 +41,8 @@ app.use("/api/chat", chatRoutes);
 // Middleware xử lý lỗi (Phải đặt dưới cùng của các Routes)
 app.use(notFound);
 app.use(errorHandler);
-
+app.use(cors());
+app.use('/api/auth', userRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server đang chạy tại: http://localhost:${PORT}`);

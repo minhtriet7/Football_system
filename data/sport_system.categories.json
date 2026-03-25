@@ -1,0 +1,147 @@
+[{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5c"
+  },
+  "name": "Sân bóng",
+  "description": "Đặt lịch các loại sân cỏ nhân tạo đạt chuẩn",
+  "parent": null,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5d"
+  },
+  "name": "Sản phẩm",
+  "description": "Mua đồ ăn, nước uống nạp năng lượng",
+  "parent": null,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5e"
+  },
+  "name": "Dịch vụ đi kèm",
+  "description": "Tiện ích hỗ trợ tại sân",
+  "parent": null,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "name": "Sân 5 người",
+  "description": "Sân nhỏ mini phù hợp cho đội ít người",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5c"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.266Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.266Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f62"
+  },
+  "name": "Sân 7 người",
+  "description": "Sân thi đấu bán chuyên rộng rãi",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5c"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.267Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.267Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "name": "Nước giải khát",
+  "description": "Các loại nước ngọt, nước khoáng ướp lạnh",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5d"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.268Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.268Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "name": "Đồ ăn nhẹ",
+  "description": "Mì tôm, xúc xích, bánh mì",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5d"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.268Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.268Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f68"
+  },
+  "name": "Hỗ trợ trận đấu",
+  "description": "Thuê trọng tài chuyên nghiệp, quay phim highlight",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5e"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.269Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.269Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6a"
+  },
+  "name": "Tiện ích sân",
+  "description": "Cho thuê áo Bib, bóng, giày và các dịch vụ hỗ trợ như trà đá, giặt ủi...",
+  "parent": {
+    "$oid": "69c2c42a07ba2e5bc23b6f5e"
+  },
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.270Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.270Z"
+  },
+  "__v": 0
+}]

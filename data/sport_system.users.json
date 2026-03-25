@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "name": "Nguyễn Tấn Lộc ",
+  "phone": "0123456789",
+  "password": "$2b$10$S.8ODbatbFXoKJwgd9.RdOmulXcVHtUJGsGHzZ1DdIqwcBpWo.MCW",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2026-03-25T00:30:01.904Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T00:30:01.904Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c3a37b927bbdafa2c3f825"
+  },
+  "name": "Lộc",
+  "phone": "0789456123",
+  "password": "$2b$10$Kb/FFNtQk.X1krVk9omHtOdOwq89e4nMr5gCPK587UxeKVNiO0tVa",
+  "role": "user",
+  "createdAt": {
+    "$date": "2026-03-25T08:57:31.758Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T08:57:31.758Z"
+  },
+  "__v": 0
+}]

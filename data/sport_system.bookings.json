@@ -1,0 +1,251 @@
+[{
+  "_id": {
+    "$oid": "69c32cd94930b0faef4d01fe"
+  },
+  "user": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6f"
+  },
+  "startTime": {
+    "$date": "2026-03-25T00:30:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T02:30:00.000Z"
+  },
+  "services": [
+    {
+      "name": "Quay phim & Hightlight trận đấu",
+      "quantity": 1,
+      "price": 500000,
+      "_id": {
+        "$oid": "69c32cd94930b0faef4d01ff"
+      }
+    },
+    {
+      "name": "Bình luận viên trực tiếp",
+      "quantity": 2,
+      "price": 400000,
+      "_id": {
+        "$oid": "69c32cd94930b0faef4d0200"
+      }
+    },
+    {
+      "name": "Thuê trọng tài bắt chính",
+      "quantity": 1,
+      "price": 200000,
+      "_id": {
+        "$oid": "69c32cd94930b0faef4d0201"
+      }
+    }
+  ],
+  "totalPrice": 2200000,
+  "status": "pending",
+  "paymentMethod": "COD",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T00:31:21.559Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T00:31:21.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c32f7c4930b0faef4d022e"
+  },
+  "user": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f71"
+  },
+  "startTime": {
+    "$date": "2026-03-25T00:30:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T02:30:00.000Z"
+  },
+  "services": [
+    {
+      "name": "Nước giải khát Pepsi Cola (Chai)",
+      "quantity": 1,
+      "price": 15000,
+      "_id": {
+        "$oid": "69c32f7c4930b0faef4d022f"
+      }
+    },
+    {
+      "name": "Dưa hấu cắt sẵn (Hộp)",
+      "quantity": 1,
+      "price": 15000,
+      "_id": {
+        "$oid": "69c32f7c4930b0faef4d0230"
+      }
+    },
+    {
+      "name": "Thuê bóng thi đấu (Động Lực)",
+      "quantity": 1,
+      "price": 50000,
+      "_id": {
+        "$oid": "69c32f7c4930b0faef4d0231"
+      }
+    }
+  ],
+  "totalPrice": 580000,
+  "status": "pending",
+  "paymentMethod": "COD",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T00:42:36.274Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T00:42:36.274Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c34ec727b42bcc9dc2bc38"
+  },
+  "user": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6f"
+  },
+  "startTime": {
+    "$date": "2026-03-24T22:00:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T00:00:00.000Z"
+  },
+  "services": [
+    {
+      "name": "Bình luận viên trực tiếp",
+      "quantity": 1,
+      "price": 400000,
+      "_id": {
+        "$oid": "69c34ec727b42bcc9dc2bc39"
+      }
+    }
+  ],
+  "totalPrice": 1100000,
+  "status": "pending",
+  "paymentMethod": "VNPAY",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T02:56:07.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T02:56:07.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c34f0a27b42bcc9dc2bc6d"
+  },
+  "user": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6f"
+  },
+  "startTime": {
+    "$date": "2026-03-25T02:30:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T04:00:00.000Z"
+  },
+  "services": [],
+  "totalPrice": 525000,
+  "status": "pending",
+  "paymentMethod": "COD",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T02:57:14.647Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T02:57:14.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c3a399927bbdafa2c3f844"
+  },
+  "user": {
+    "$oid": "69c3a37b927bbdafa2c3f825"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f71"
+  },
+  "startTime": {
+    "$date": "2026-03-25T09:00:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T16:00:00.000Z"
+  },
+  "services": [
+    {
+      "name": "Thuê trọng tài bắt chính",
+      "quantity": 2,
+      "price": 200000,
+      "_id": {
+        "$oid": "69c3a399927bbdafa2c3f845"
+      }
+    }
+  ],
+  "totalPrice": 2150000,
+  "status": "pending",
+  "paymentMethod": "COD",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T08:58:01.685Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T08:58:01.685Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c3a432927bbdafa2c3f87d"
+  },
+  "user": {
+    "$oid": "69c3a37b927bbdafa2c3f825"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6d"
+  },
+  "startTime": {
+    "$date": "2026-03-25T10:00:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T11:30:00.000Z"
+  },
+  "services": [
+    {
+      "name": "Giặt ủi đồng phục đội",
+      "quantity": 2,
+      "price": 50000,
+      "_id": {
+        "$oid": "69c3a6f424725e1ee75c981b"
+      }
+    }
+  ],
+  "totalPrice": 400000,
+  "status": "confirmed",
+  "paymentMethod": "VNPAY",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T09:00:34.566Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T09:58:18.833Z"
+  },
+  "__v": 1
+}]

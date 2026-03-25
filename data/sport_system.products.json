@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f81"
+  },
+  "name": "Bò húc Redbull (Lon)",
+  "slug": "bo-huc-redbull-lon",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 100,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/6-lon-nuoc-tang-luc-redbull-thai-kem-va-vitamin-250ml_202505261547195951_unznoz.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.289Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.289Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f83"
+  },
+  "name": "Nước khoáng Lavie",
+  "slug": "nuoc-khoang-lavie",
+  "price": 10000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 50,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370776/6-chai-nuoc-bu-khoang-revive-muoi-khoang-500ml-202103312248177034_lgj1oi.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.290Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.290Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f85"
+  },
+  "name": "Nước bù khoáng Revive",
+  "slug": "nuoc-bu-khoang-revive",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 80,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370776/6-chai-nuoc-bu-khoang-revive-muoi-khoang-500ml-202103312248177034_lgj1oi.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.291Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.291Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f87"
+  },
+  "name": "Nước tăng lực Sting Vàng",
+  "slug": "nuoc-tang-luc-sting-vang",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 60,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370869/nuoc-tang-luc-sting-vang-loc-6-lon-330ml_202509291608252838_synw1n.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.292Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.292Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f89"
+  },
+  "name": "Nước tăng lực Sting Dâu",
+  "slug": "nuoc-tang-luc-sting-dau",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 60,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370869/nuoc-tang-luc-sting-vi-dau-loc-6-lon-cao-330ml_202509291513317781_t47wv6.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.293Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f8b"
+  },
+  "name": "Nước bù khoáng Revive chanh muối",
+  "slug": "nuoc-bu-khoang-revive-chanh-muoi",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 40,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/7up-revive-chanh-muoi-chai-390ml-th24_202508220833172410_xrgrdr.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.294Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f8d"
+  },
+  "name": "Mì tôm trứng xúc xích",
+  "slug": "mi-tom-trung-xuc-xich",
+  "price": 25000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 20,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/thung-12-to-mi-tron-handy-hao-hao-huong-vi-tom-chua-cay-93g-202207270936026356_xdgjxi.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.295Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f8f"
+  },
+  "name": "Mì tôm trứng xúc xích",
+  "slug": "mi-tom-trung-xuc-xich",
+  "price": 25000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 20,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370797/mi-an-lien-mini-handy-hao-hao-vi-tom-chua-cay-ly-47g-202007020813289995_plx1rf.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.296Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.296Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f91"
+  },
+  "name": "Bánh mì ốp la xúc xích",
+  "slug": "banh-mi-op-la-xuc-xich",
+  "price": 20000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 15,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/1000x800zmaxbanh-mi-kep-trung-4071_mpmrrc.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.296Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.296Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f93"
+  },
+  "name": "Xúc xích nướng đá (Cây)",
+  "slug": "xuc-xich-nuong-da-cay",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/lap-xuong-nuong-da-hot-trend-co-tot-cho-suc-khoe-khong-202402031141558657_ryddfo.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.297Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.297Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f95"
+  },
+  "name": "Xoài keo (Túi 1kg)",
+  "slug": "xoai-keo-tui-1kg",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/xoai-keo-tui-1kg-202012311612453441_zrrhc2.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.298Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.298Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f97"
+  },
+  "name": "Chuối",
+  "slug": "chuoi",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/chuoi-gia-giong-nam-my-1kg-202012021040379843_qadiyz.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f99"
+  },
+  "name": "Mận",
+  "slug": "man",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370779/man-an-phuoc-1kg-202011041104269773_txniox.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f9b"
+  },
+  "name": "Dưa hấu cắt sẵn (Hộp)",
+  "slug": "dua-hau-cat-san-hop",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f66"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370778/dua-hau-do-trai-25-27kg-1-trai_202506020859550694_weuilo.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.300Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.300Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f9d"
+  },
+  "name": "Nước giải khát Pepsi Cola (Chai)",
+  "slug": "nuoc-giai-khat-pepsi-cola-chai",
+  "price": 15000,
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f64"
+  },
+  "countInStock": 30,
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774370777/6-chai-nuoc-ngot-pepsi-cola-390ml-202405131544132338_uyszwa.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.301Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.301Z"
+  },
+  "__v": 0
+}]

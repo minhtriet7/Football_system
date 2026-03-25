@@ -1,0 +1,200 @@
+[{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6d"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 1",
+  "slug": "san-co-nhan-tao-so-1",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 200000,
+  "description": "Sân cỏ mới thay, hệ thống đèn LED siêu sáng, phù hợp đá tối.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.275Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.275Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6f"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 2",
+  "slug": "san-co-nhan-tao-so-2",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f62"
+  },
+  "pricePerHour": 350000,
+  "description": "Sân rộng đạt chuẩn, mặt cỏ êm, có khán đài nhỏ phù hợp đá giải.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.277Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.277Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f71"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 3 (Có mái che)",
+  "slug": "san-co-nhan-tao-so-3-co-mai-che",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 250000,
+  "description": "Sân 5 người đặc biệt trang bị mái che, không ngại mưa nắng, mặt cỏ kim êm ái.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.278Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.278Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f73"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 4",
+  "slug": "san-co-nhan-tao-so-4",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 180000,
+  "description": "Sân nằm góc trong, yên tĩnh, lưới rào cao an toàn, giá sinh viên.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.279Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.279Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f75"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 5",
+  "slug": "san-co-nhan-tao-so-5",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 200000,
+  "description": "Vị trí gần khu vực căng tin và ghế chờ, rất tiện lợi cho các đội nghỉ ngơi.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.280Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.280Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f77"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 6 (Sân VIP)",
+  "slug": "san-co-nhan-tao-so-6-vip",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f62"
+  },
+  "pricePerHour": 400000,
+  "description": "Sân VIP kích thước lớn nhất cụm, cỏ chuẩn FIFA, có khu vực kỹ thuật và ghế dự bị riêng.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.281Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.281Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f79"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 7",
+  "slug": "san-co-nhan-tao-so-7",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f62"
+  },
+  "pricePerHour": 320000,
+  "description": "Mặt sân cao thoát nước tốt, không bị đọng vũng khi trời mưa, hệ thống chiếu sáng 4 góc.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.282Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.282Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f7b"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 8",
+  "slug": "san-co-nhan-tao-so-8",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 220000,
+  "description": "Sân vừa được nâng cấp mặt cỏ tháng trước, hạt cao su trải đều chống trơn trượt tối đa.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.282Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.282Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f7d"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 9",
+  "slug": "san-co-nhan-tao-so-9",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f62"
+  },
+  "pricePerHour": 350000,
+  "description": "Không gian thoáng đãng, lề sân rộng rãi thoải mái khởi động trước trận.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.283Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.283Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69c2c42a07ba2e5bc23b6f7f"
+  },
+  "name": "Sân Cỏ Nhân Tạo Số 10",
+  "slug": "san-co-nhan-tao-so-10",
+  "category": {
+    "$oid": "69c2c42a07ba2e5bc23b6f60"
+  },
+  "pricePerHour": 200000,
+  "description": "Sân tiêu chuẩn, lưới gôn mới, vạch kẻ sơn rõ nét, phù hợp cho các trận đấu giao hữu hàng tuần.",
+  "imageUrl": "https://res.cloudinary.com/dg0qiq4zd/image/upload/v1774371230/quy-trinh-thi-cong-san-co-nhan-tao_gaooed.jpg",
+  "createdAt": {
+    "$date": "2026-03-24T17:04:42.284Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-24T17:04:42.284Z"
+  },
+  "__v": 0
+}]
