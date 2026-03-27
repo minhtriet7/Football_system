@@ -12,6 +12,7 @@ export default function ManageUsers() {
         const res = await api.get('/users'); // Gọi API lấy list user
         setUsers(Array.isArray(res.data) ? res.data : []);
       } catch (error) {
+        
         // Mock data
         setUsers([
           { _id: 'u1', name: 'Nguyễn Tấn Lộc', email: 'loc@gmail.com', phone: '0904438369', role: 'admin' },

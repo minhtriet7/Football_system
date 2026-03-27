@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { getAllFieldsAPI } from "../../services/fieldService";
 import toast from "react-hot-toast";
 import {
@@ -15,6 +15,7 @@ import {
 export default function FieldsPage() {
   const [searchParams] = useSearchParams();
   const categoryQuery = searchParams.get("category");
+  const navigate = useNavigate();
 
   const [fields, setFields] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,8 +43,15 @@ export default function FieldsPage() {
           setFields([]);
         }
       } catch (error) {
-        toast.error("Không thể kết nối tới Server lấy dữ liệu sân!");
-        setErrorStatus(true);
+        // Nếu lỗi 401 là do token hết hạn, vẫn có thể bỏ qua để xem sân (vì đây là trang public)
+        if (error.response && error.response.status === 401) {
+          localStorage.removeItem("userInfo"); // Dọn dẹp token rác
+          // Có thể gọi lại hàm fetchFields ở đây nếu API của bạn cho phép public,
+          // hoặc đơn giản là set báo lỗi nhẹ.
+        } else {
+          toast.error("Không thể kết nối tới Server lấy dữ liệu sân!");
+          setErrorStatus(true);
+        }
       } finally {
         setLoading(false);
       }
@@ -63,28 +71,29 @@ export default function FieldsPage() {
     if (Array.isArray(urlData) && urlData.length > 0) return urlData[0];
     return (
       urlData || "https://images.unsplash.com/photo-1589487391730-58f20eb2c308"
-    ); // Ảnh mặc định nếu sân chưa có ảnh
+    );
   };
 
-  // LOGIC TÌM KIẾM VÀ LỌC SÂN (Hoạt động 100%)
+  // LOGIC TÌM KIẾM VÀ LỌC SÂN (Đã đồng bộ chuẩn 100% với Database)
   const filteredFields = fields.filter((field) => {
-    // 1. Lọc theo tên sân (Không phân biệt hoa thường)
+    // 1. Lọc theo tên sân
     const matchSearch = field.name
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
 
-    // 2. Lọc theo loại sân (5 người, 7 người...)
-    const catName = field.category?.name || field.categoryName || "";
-    const matchFilter = filterType === "All" || catName.includes(filterType);
+    // 2. Lọc theo Loại sân (Lấy chính xác trường name từ Category đã populate)
+    const categoryName = field.category?.name || "";
+
+    // 3. So sánh chính xác 100% chữ "Sân 5 người", "Sân 7 người"
+    const matchFilter = filterType === "All" || categoryName === filterType;
 
     return matchSearch && matchFilter;
   });
 
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
-      {/* 1. HERO BANNER SIÊU ĐẸP */}
+      {/* 1. HERO BANNER */}
       <div className="relative bg-[#003b73] py-20 px-4 overflow-hidden">
-        {/* Background Pattern/Image mờ */}
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1551280857-2b9bbe5240f5?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#003b73] to-transparent"></div>
 
@@ -106,7 +115,7 @@ export default function FieldsPage() {
         </div>
       </div>
 
-      {/* 2. THANH TÌM KIẾM NỔI (FLOATING SEARCH BAR) */}
+      {/* 2. THANH TÌM KIẾM NỔI */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative -mt-8 z-20 mb-12">
         <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-gray-100 flex flex-col md:flex-row gap-3 items-center">
           <div className="relative w-full flex-grow">
@@ -138,7 +147,6 @@ export default function FieldsPage() {
               <option value="Sân 7 người">Sân 7 người</option>
               <option value="Sân 11 người">Sân 11 người</option>
             </select>
-            {/* Mũi tên dropdown tùy chỉnh */}
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-rose-500">
               <svg
                 className="fill-current h-4 w-4"
@@ -158,17 +166,17 @@ export default function FieldsPage() {
           <div className="flex flex-col items-center justify-center py-20 text-blue-900">
             <div className="w-12 h-12 border-4 border-blue-200 border-t-rose-600 rounded-full animate-spin mb-4"></div>
             <p className="font-bold animate-pulse text-lg">
-              Đang tìm kiếm sân trống...
+              Đang tải danh sách sân...
             </p>
           </div>
         ) : errorStatus ? (
           <div className="text-center py-20 bg-white rounded-3xl shadow-sm border border-red-100 text-red-500 flex flex-col items-center">
             <AlertTriangle size={56} className="mb-4 opacity-50" />
             <h3 className="font-black text-2xl mb-2 text-gray-800">
-              Mất kết nối máy chủ!
+              Không thể tải dữ liệu!
             </h3>
             <p className="text-gray-500">
-              Vui lòng kiểm tra lại kết nối hoặc F5 tải lại trang.
+              Bạn vui lòng đăng xuất và đăng nhập lại, hoặc nhấn F5.
             </p>
           </div>
         ) : filteredFields.length === 0 ? (
@@ -199,7 +207,6 @@ export default function FieldsPage() {
                 key={field._id}
                 className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(225,29,72,0.1)] transition-all duration-300 border border-gray-100 group flex flex-col"
               >
-                {/* Phần Ảnh */}
                 <div
                   className="h-60 overflow-hidden relative cursor-pointer"
                   onClick={() => navigate(`/field/${field._id}`)}
@@ -209,17 +216,17 @@ export default function FieldsPage() {
                     alt={field.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  {/* Tag Loại sân */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-xl text-sm font-bold text-blue-900 shadow-sm flex items-center">
-                    {field.categoryName || field.category?.name || "Sân bóng"}
+                    {field.categoryName ||
+                      field.category?.name ||
+                      field.type ||
+                      "Sân bóng"}
                   </div>
-                  {/* Rating ảo cho đẹp mắt */}
                   <div className="absolute top-4 right-4 bg-gray-900/70 backdrop-blur-sm px-2.5 py-1 rounded-lg text-xs font-bold text-yellow-400 flex items-center">
                     <Star size={14} className="mr-1 fill-yellow-400" /> 5.0
                   </div>
                 </div>
 
-                {/* Phần Nội dung */}
                 <div className="p-6 flex flex-col flex-grow relative">
                   <h3
                     className="text-2xl font-black text-gray-900 mb-2 group-hover:text-blue-900 transition-colors line-clamp-1"
@@ -251,7 +258,6 @@ export default function FieldsPage() {
                       </span>
                     </div>
 
-                    {/* LINK ĐÚNG CHUẨN DẪN ĐẾN TRANG CHI TIẾT SÂN */}
                     <Link
                       to={`/field/${field._id}`}
                       className="bg-blue-900 text-white font-bold px-6 py-3 rounded-xl hover:bg-rose-600 transition-colors shadow-md flex items-center group-hover:pr-4"

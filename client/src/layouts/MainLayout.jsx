@@ -1,25 +1,47 @@
-import React, { useState } from "react";
-import { Outlet, Link, useNavigate, useLocation } from "react-router-dom"; // <-- Đã thêm useLocation
-import { MapPin, Phone, Mail, ChevronDown, User, LogOut } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  ChevronDown,
+  User,
+  LogOut,
+  LayoutDashboard,
+  FileText,
+  Settings,
+} from "lucide-react";
 
 export default function MainLayout() {
   const navigate = useNavigate();
-  const location = useLocation(); // <-- Lấy đường dẫn hiện tại
+  const location = useLocation();
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Xử lý tự động đóng Dropdown khi click ra ngoài
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("token"); // Xóa thêm token nếu có
+    setIsDropdownOpen(false);
     navigate("/auth");
   };
 
-  // HÀM KIỂM TRA ĐANG Ở TRANG NÀO ĐỂ BÔI ĐỎ MENU
   const isActive = (path) => {
     if (path === "/") return location.pathname === "/";
-    return location.pathname.includes(path); // Bao gồm cả các trang con (vd: /field/123)
+    return location.pathname.includes(path);
   };
 
-  // Tách class CSS ra cho gọn và dễ đổi màu
   const activeClass = "text-rose-600 border-b-2 border-rose-600 pb-1 font-bold";
   const inactiveClass =
     "text-gray-700 hover:text-blue-900 pb-1 transition-colors font-semibold";
@@ -50,18 +72,14 @@ export default function MainLayout() {
           24h<span className="text-rose-600">Sports</span>
         </Link>
 
-        {/* Menu Navigation (ĐÃ ÁP DỤNG HIỆU ỨNG ACTIVE) */}
+        {/* Menu Navigation */}
         <div className="hidden lg:flex items-center space-x-8">
           <Link to="/" className={isActive("/") ? activeClass : inactiveClass}>
             Trang chủ
           </Link>
 
           {/* Dropdown Sân Bóng */}
-          <div
-            className="relative group cursor-pointer"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-          >
+          <div className="relative group cursor-pointer">
             <Link
               to="/fields"
               className={`flex items-center ${isActive("/field") ? activeClass : inactiveClass}`}
@@ -106,25 +124,84 @@ export default function MainLayout() {
           </Link>
         </div>
 
-        {/* User Actions */}
+        {/* User Actions (Tích hợp Dropdown tại đây) */}
         <div className="flex items-center space-x-4">
           {userInfo ? (
-            <div className="flex items-center space-x-4 bg-blue-50 px-4 py-2 rounded-full border border-blue-100">
-              <Link
-                to="/my-bookings"
-                className="flex items-center text-blue-900 font-bold text-sm hover:text-rose-600 transition"
-                title="Xem lịch sử đặt sân"
-              >
-                <User size={18} className="mr-2" />
-                {userInfo.name}
-              </Link>
+            <div className="relative" ref={dropdownRef}>
               <button
-                onClick={handleLogout}
-                className="text-gray-400 hover:text-red-500 transition pl-3 border-l border-blue-200"
-                title="Đăng xuất"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center space-x-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 py-1.5 px-3 rounded-full transition-all duration-200"
               >
-                <LogOut size={18} />
+                <div className="bg-blue-900 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                  {userInfo.name ? userInfo.name.charAt(0).toUpperCase() : "U"}
+                </div>
+                <span className="text-sm font-bold text-gray-700 hidden md:block max-w-[120px] truncate">
+                  {userInfo.name}
+                </span>
+                <ChevronDown
+                  size={16}
+                  className={`text-gray-500 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                />
               </button>
+
+              {/* KHUNG DROPDOWN MENU */}
+              {isDropdownOpen && (
+                <div className="absolute right-0 mt-3 w-60 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 overflow-hidden z-50">
+                  {/* Header Dropdown */}
+                  <div className="p-4 border-b border-gray-100 bg-gray-50/50">
+                    <p className="text-sm font-bold text-gray-900 truncate">
+                      {userInfo.name}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-0.5 truncate">
+                      {userInfo.phone || "Thành viên 24h Sports"}
+                    </p>
+                  </div>
+
+                  {/* Body Dropdown */}
+                  <div className="p-2 space-y-1">
+                    {/* Chỉ Admin mới thấy nút này */}
+                    {userInfo.role === "admin" && (
+                      <Link
+                        to="/admin"
+                        onClick={() => setIsDropdownOpen(false)}
+                        className="flex items-center px-3 py-2.5 text-sm font-bold text-rose-600 bg-rose-50 rounded-xl hover:bg-rose-100 transition-colors"
+                      >
+                        <LayoutDashboard size={18} className="mr-3" />
+                        Trang Quản Trị (Admin)
+                      </Link>
+                    )}
+
+                    <Link
+                      to="/my-bookings"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-3 py-2.5 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-100 hover:text-blue-900 transition-colors"
+                    >
+                      <FileText size={18} className="mr-3" />
+                      Lịch sử đặt sân
+                    </Link>
+
+                    <Link
+                      to="/profile"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-3 py-2.5 text-sm font-medium text-gray-700 rounded-xl hover:bg-gray-100 hover:text-blue-900 transition-colors"
+                    >
+                      <Settings size={18} className="mr-3" />
+                      Cài đặt tài khoản
+                    </Link>
+                  </div>
+
+                  {/* Footer Dropdown (Nút Đăng xuất) */}
+                  <div className="p-2 border-t border-gray-100">
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center w-full px-3 py-2.5 text-sm font-medium text-red-600 rounded-xl hover:bg-red-50 transition-colors"
+                    >
+                      <LogOut size={18} className="mr-3" />
+                      Đăng xuất
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <>

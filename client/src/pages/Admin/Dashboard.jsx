@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {
   getAdminStatsAPI,
-  getRecentBookingsAPI,
+  getAllBookingsAdminAPI,
 } from "../../services/bookingService";
 import toast from "react-hot-toast";
 import {
@@ -26,62 +26,74 @@ export default function Dashboard() {
     totalBookings: 0,
     totalFields: 0,
     totalUsers: 0,
-    dailyRevenue: [], // Mảng doanh thu 7 ngày gần nhất để vẽ biểu đồ
+    dailyRevenue: [0, 0, 0, 0, 0, 0, 0],
   });
 
-  // State lưu 5 đơn hàng mới nhất
   const [recentBookings, setRecentBookings] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // GỌI API LẤY DỮ LIỆU THẬT
+  // GỌI API VÀ TÍNH TOÁN DỮ LIỆU THẬT
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
         setLoading(true);
-        // Gọi song song 2 API cho nhanh
-        const [statsData, recentBookingsData] = await Promise.all([
-          getAdminStatsAPI(),
-          getRecentBookingsAPI(),
+
+        // Gọi API lấy thống kê cơ bản và TOÀN BỘ đơn hàng
+        const [statsData, allBookingsData] = await Promise.all([
+          getAdminStatsAPI().catch(() => ({})),
+          getAllBookingsAdminAPI(),
         ]);
 
-        setStats(statsData);
-        setRecentBookings(
-          Array.isArray(recentBookingsData) ? recentBookingsData : [],
+        const allBookings = Array.isArray(allBookingsData)
+          ? allBookingsData
+          : [];
+
+        // ---------------------------------------------------------
+        // 🚀 LOGIC 1: TÍNH DOANH THU THỰC TẾ (CHỈ LẤY ĐƠN "ĐÃ HOÀN THÀNH")
+        // ---------------------------------------------------------
+        // Đã sửa đổi theo yêu cầu: Chỉ cộng tiền khi đơn đã completed
+        const completedBookings = allBookings.filter(
+          (b) => b.status === "completed",
         );
-      } catch (error) {
-        // toast.error("Lỗi khi tải dữ liệu thống kê!"); // Tắt toast này nếu seeder dữ liệu cũ chưa chuẩn
-        console.error("Lỗi Dashboard: ", error);
 
-        // MỘT SỐ DỮ LIỆU GIẢ LẬP ĐỂ HIỂN THỊ KHI CHƯA CÓ API THẬT
-        setStats({
-          totalRevenue: 12500000,
-          totalBookings: 45,
-          totalFields: 8,
-          totalUsers: 120,
-          dailyRevenue: [
-            1500000, 2200000, 1800000, 2500000, 1900000, 2800000, 3100000,
-          ],
+        const realRevenue = completedBookings.reduce(
+          (sum, booking) => sum + (booking.totalPrice || 0),
+          0,
+        );
+
+        // ---------------------------------------------------------
+        // 🚀 LOGIC 2: TỰ ĐỘNG VẼ BIỂU ĐỒ DOANH THU THEO THỨ (T2 -> CN)
+        // ---------------------------------------------------------
+        const calculatedDailyRevenue = [0, 0, 0, 0, 0, 0, 0];
+
+        // Chỉ vẽ biểu đồ dựa trên các đơn đã completed
+        completedBookings.forEach((booking) => {
+          if (booking.startTime) {
+            const date = new Date(booking.startTime);
+            const dayIndex = date.getDay() === 0 ? 6 : date.getDay() - 1;
+            calculatedDailyRevenue[dayIndex] += booking.totalPrice || 0;
+          }
         });
-        setRecentBookings([
-          {
-            _id: "bk001",
-            field: { name: "Sân số 2" },
-            user: { name: "Nguyễn Văn A" },
-            startTime: "2026-03-25T18:00:00",
-            endTime: "2026-03-25T19:30:00",
-            totalPrice: 450000,
-            status: "pending",
-          },
-          {
-            _id: "bk002",
-            field: { name: "Sân cỏ nhân tạo 1" },
-            user: { name: "Trần Thị B" },
-            startTime: "2026-03-25T17:30:00",
-            endTime: "2026-03-25T19:00:00",
-            totalPrice: 300000,
-            status: "confirmed",
-          },
-        ]);
+
+        // Đếm số lượng khách hàng duy nhất từ các đơn hàng
+        const uniqueUsersCount = new Set(
+          allBookings.filter((b) => b.user).map((b) => b.user._id),
+        ).size;
+
+        // Cập nhật State với dữ liệu đã tính toán
+        setStats({
+          totalRevenue: realRevenue,
+          totalBookings: allBookings.length, // Đơn đặt sân vẫn đếm tất cả để biết lượng khách
+          totalFields: statsData.totalFields || 10,
+          totalUsers: statsData.totalUsers || uniqueUsersCount || 0,
+          dailyRevenue: calculatedDailyRevenue,
+        });
+
+        // Lấy 5 đơn hàng mới nhất cho bảng bên dưới
+        setRecentBookings(allBookings.slice(0, 5));
+      } catch (error) {
+        console.error("Lỗi Dashboard: ", error);
+        toast.error("Không thể tải dữ liệu mới nhất!");
       } finally {
         setLoading(false);
       }
@@ -108,24 +120,24 @@ export default function Dashboard() {
   const getStatusBadge = (status) => {
     if (status === "cancelled")
       return (
-        <span className="flex items-center text-red-600 bg-red-50 px-2.5 py-1 rounded-full text-xs font-bold">
+        <span className="flex items-center text-red-600 bg-red-50 px-2.5 py-1 rounded-full text-xs font-bold w-fit">
           <XCircle size={12} className="mr-1" /> Đã hủy
         </span>
       );
     if (status === "confirmed")
       return (
-        <span className="flex items-center text-green-600 bg-green-50 px-2.5 py-1 rounded-full text-xs font-bold">
+        <span className="flex items-center text-green-600 bg-green-50 px-2.5 py-1 rounded-full text-xs font-bold w-fit">
           <CheckCircle size={12} className="mr-1" /> Đã xác nhận
         </span>
       );
     if (status === "completed")
       return (
-        <span className="flex items-center text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full text-xs font-bold">
+        <span className="flex items-center text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full text-xs font-bold w-fit">
           <CheckCircle size={12} className="mr-1" /> Đã hoàn thành
         </span>
       );
     return (
-      <span className="flex items-center text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full text-xs font-bold">
+      <span className="flex items-center text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full text-xs font-bold w-fit">
         <Clock size={12} className="mr-1" /> Chờ xác nhận
       </span>
     );
@@ -181,7 +193,7 @@ export default function Dashboard() {
         />
         <StatCard
           icon={<CalendarDays size={24} />}
-          title="Đơn đặt sân"
+          title="Tổng đơn sân"
           value={stats.totalBookings}
           color="bg-green-100 text-green-700"
         />
@@ -204,39 +216,50 @@ export default function Dashboard() {
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-black text-slate-950 flex items-center">
             <TrendingUp size={24} className="mr-2 text-rose-600" /> Biểu đồ
-            doanh thu tuần này
+            doanh thu đã chốt tuần này
           </h2>
           <span className="text-sm font-bold text-gray-400 bg-gray-50 px-4 py-1.5 rounded-full border border-gray-200">
-            Cập nhật 1 giờ trước
+            Cập nhật theo thời gian thực
           </span>
         </div>
 
         {/* Biểu đồ cột đơn giản bằng CSS */}
-        <div className="flex items-end justify-between h-64 space-x-2 border-b-2 border-dashed border-gray-200 pb-2">
-          {stats.dailyRevenue.map((value, index) => {
-            const maxRevenue = Math.max(...stats.dailyRevenue, 1);
-            const heightPercentage = (value / maxRevenue) * 100;
-            const daysOfWeek = ["T2", "T3", "T4", "T5", "T6", "T7", "CN"];
+        <div className="mt-4">
+          <div className="flex items-end justify-between h-56 space-x-2 border-b-2 border-dashed border-gray-200 pb-1">
+            {stats.dailyRevenue.map((value, index) => {
+              const maxRevenue = Math.max(...stats.dailyRevenue, 1);
+              const heightPercentage = (value / maxRevenue) * 100;
 
-            return (
-              <div
-                key={index}
-                className="w-full flex flex-col items-center group relative"
-              >
-                <div className="absolute opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs font-bold px-2 py-1.5 rounded-lg -top-10 transition-opacity z-10 pointer-events-none whitespace-nowrap">
-                  {formatPrice(value)}
-                </div>
+              return (
                 <div
-                  className={`w-12 rounded-t-xl group-hover:bg-rose-500 transition-colors duration-300
-                    ${index === stats.dailyRevenue.length - 1 ? "bg-rose-600" : "bg-rose-200"}`}
-                  style={{ height: `${heightPercentage}%`, minHeight: "10%" }}
-                ></div>
-                <p className="text-xs font-bold text-gray-500 mt-3">
-                  {daysOfWeek[index]}
-                </p>
+                  key={index}
+                  className="w-full h-full flex flex-col justify-end items-center group relative"
+                >
+                  <div
+                    className="absolute opacity-0 group-hover:opacity-100 bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-opacity z-10 pointer-events-none whitespace-nowrap mb-2 shadow-lg"
+                    style={{ bottom: `${heightPercentage}%` }}
+                  >
+                    {formatPrice(value)}
+                  </div>
+                  <div
+                    className={`w-10 md:w-12 rounded-t-xl transition-all duration-700
+                      ${value > 0 ? "bg-rose-500 group-hover:bg-rose-600 shadow-md shadow-rose-200" : "bg-gray-100"}`}
+                    style={{
+                      height: `${heightPercentage}%`,
+                      minHeight: value === 0 ? "4px" : "15%",
+                    }}
+                  ></div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex justify-between mt-3 text-xs font-bold text-gray-500">
+            {["T2", "T3", "T4", "T5", "T6", "T7", "CN"].map((day, idx) => (
+              <div key={idx} className="w-full text-center">
+                {day}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -244,7 +267,7 @@ export default function Dashboard() {
       <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.03)] border border-gray-100">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-black text-slate-950">
-            5 đơn đặt sân gần đây nhất
+            5 đơn đặt sân mới nhất
           </h2>
           <Link
             to="/admin/bookings"
@@ -260,7 +283,7 @@ export default function Dashboard() {
 
         {recentBookings.length === 0 ? (
           <div className="text-center py-10 bg-gray-50 rounded-2xl border border-gray-100 text-gray-500">
-            Hiện tại chưa có đơn đặt sân nào trong hôm nay.
+            Hiện tại chưa có đơn đặt sân nào.
           </div>
         ) : (
           <div className="overflow-x-auto">

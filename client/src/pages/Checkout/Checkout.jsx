@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { getFieldByIdAPI } from "../../services/fieldService";
-import { getAllProductsAPI } from "../../services/productService"; // <-- Thêm Import Product
+import { getAllProductsAPI } from "../../services/productService";
 import { getServicesAPI } from "../../services/serviceItemService";
 
 import { createBookingAPI } from "../../services/bookingService";
@@ -13,7 +13,6 @@ import {
   Plus,
   Minus,
   User,
-  Phone,
   MapPin,
   Calendar,
   Clock,
@@ -27,17 +26,15 @@ export default function Checkout() {
 
   const { bookingDate, startTime, endTime } = location.state || {};
 
-  // Lấy thông tin user từ LocalStorage
   const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
 
   const [field, setField] = useState(null);
-  const [addonItems, setAddonItems] = useState([]); // <-- Gộp chung Nước uống & Dịch vụ
+  const [addonItems, setAddonItems] = useState([]);
   const [selectedServices, setSelectedServices] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState("VNPAY");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // 1. CHÈN DÒNG NÀY VÀO ĐÂY ĐỂ LÀM SẠCH GIỎ HÀNG MỖI LẦN VÀO TRANG MỚI
     setSelectedServices([]);
 
     if (!bookingDate) {
@@ -51,36 +48,33 @@ export default function Checkout() {
         const fieldData = await getFieldByIdAPI(id);
         const [servicesData, productsData] = await Promise.all([
           getServicesAPI(),
-          getAllProductsAPI()
+          getAllProductsAPI(),
         ]);
-        
+
         setField(fieldData);
         setAddonItems([...servicesData, ...productsData]);
       } catch (error) {
-        toast.error("Lỗi khi tải dữ liệu thanh toán!");
+        toast.error("Lỗi khi tải dữ liệu thanh toán!",error);
       }
     };
     fetchData();
   }, [id, bookingDate, navigate]);
 
   const handleServiceChange = (service, action) => {
-    const existing = selectedServices.find(
-      (s) => s.serviceItem === service._id,
-    );
+    // FIX: Đồng bộ dùng item_id thay vì serviceItem để khớp với Backend
+    const existing = selectedServices.find((s) => s.item_id === service._id);
     if (action === "add") {
       if (existing) {
         setSelectedServices(
           selectedServices.map((s) =>
-            s.serviceItem === service._id
-              ? { ...s, quantity: s.quantity + 1 }
-              : s,
+            s.item_id === service._id ? { ...s, quantity: s.quantity + 1 } : s,
           ),
         );
       } else {
         setSelectedServices([
           ...selectedServices,
           {
-            serviceItem: service._id,
+            item_id: service._id,
             quantity: 1,
             price: service.price,
             name: service.name,
@@ -90,14 +84,12 @@ export default function Checkout() {
     } else if (action === "remove" && existing) {
       if (existing.quantity === 1) {
         setSelectedServices(
-          selectedServices.filter((s) => s.serviceItem !== service._id),
+          selectedServices.filter((s) => s.item_id !== service._id),
         );
       } else {
         setSelectedServices(
           selectedServices.map((s) =>
-            s.serviceItem === service._id
-              ? { ...s, quantity: s.quantity - 1 }
-              : s,
+            s.item_id === service._id ? { ...s, quantity: s.quantity - 1 } : s,
           ),
         );
       }
@@ -132,35 +124,41 @@ export default function Checkout() {
   const handleConfirmBooking = async () => {
     setLoading(true);
     try {
-      const startDateTime = new Date(
-        `${bookingDate}T${startTime}`,
-      ).toISOString();
+      const startDateTime = new Date(`${bookingDate}T${startTime}`).toISOString();
       const endDateTime = new Date(`${bookingDate}T${endTime}`).toISOString();
 
       const bookingData = {
         fieldId: id,
         startTime: startDateTime,
         endTime: endDateTime,
-        services: selectedServices,
+        services: selectedServices, 
         paymentMethod,
       };
 
+      // 1. Tạo đơn đặt sân lưu vào DB trước
       const res = await createBookingAPI(bookingData);
+      const newBookingId = res.bookingId || res.booking._id;
 
+      // 2. Nếu chọn VNPAY thì gọi API lấy link rồi chuyển trang
       if (paymentMethod === "VNPAY") {
         toast.success("Đang tạo link thanh toán VNPAY...");
-        const vnpayRes = await createVnpayUrlAPI(
-          res.bookingId || res.booking._id,
-        );
-        window.location.href = vnpayRes.paymentUrl;
+        
+        // Gọi service lấy link VNPAY
+        const vnpayRes = await createVnpayUrlAPI(newBookingId);
+        
+        // Chuyển hướng trình duyệt sang web của VNPAY
+        if (vnpayRes && vnpayRes.paymentUrl) {
+            window.location.href = vnpayRes.paymentUrl;
+        } else {
+            toast.error("Không lấy được link thanh toán từ hệ thống!");
+        }
+
       } else {
         toast.success("Đặt sân thành công! Vui lòng đến đúng giờ.");
         navigate("/my-bookings");
       }
     } catch (error) {
-      toast.error(
-        error.response?.data?.message || "Có lỗi xảy ra khi đặt sân!",
-      );
+      toast.error(error.response?.data?.message || "Có lỗi xảy ra khi đặt sân!");
     } finally {
       setLoading(false);
     }
@@ -226,7 +224,7 @@ export default function Checkout() {
               <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2">
                 {addonItems.map((item) => {
                   const selected = selectedServices.find(
-                    (s) => s.serviceItem === item._id,
+                    (s) => s.item_id === item._id, // FIX
                   );
                   return (
                     <div

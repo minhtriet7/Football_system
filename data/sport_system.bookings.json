@@ -248,4 +248,33 @@
     "$date": "2026-03-25T09:58:18.833Z"
   },
   "__v": 1
+},
+{
+  "_id": {
+    "$oid": "69c416111aa78b879b67d217"
+  },
+  "user": {
+    "$oid": "69c32c894930b0faef4d01f1"
+  },
+  "field": {
+    "$oid": "69c2c42a07ba2e5bc23b6f6d"
+  },
+  "startTime": {
+    "$date": "2026-03-25T07:00:00.000Z"
+  },
+  "endTime": {
+    "$date": "2026-03-25T09:00:00.000Z"
+  },
+  "services": [],
+  "totalPrice": 400000,
+  "status": "pending",
+  "paymentMethod": "VNPAY",
+  "isPaid": false,
+  "createdAt": {
+    "$date": "2026-03-25T17:06:25.286Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-25T17:06:25.286Z"
+  },
+  "__v": 0
 }]

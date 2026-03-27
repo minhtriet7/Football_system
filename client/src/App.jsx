@@ -18,7 +18,8 @@ import ManageBookings from "./pages/Admin/ManageBookings";
 import ManageFields from "./pages/Admin/ManageFields";
 import ManageProducts from "./pages/Admin/ManageProducts";
 import ManageUsers from "./pages/Admin/ManageUsers";
-
+import Profile from './pages/Profile/Profile';
+import VnpayReturn from './pages/Checkout/VnpayReturn'; // Đường dẫn import tùy thuộc vào nơi bạn lưu file này
 function App() {
   return (
     // THAY THẺ <> BẰNG BROWSER_ROUTER ĐỂ BỌC TOÀN BỘ ỨNG DỤNG
@@ -38,6 +39,8 @@ function App() {
           <Route path="products-services" element={<ProductsPage />} />
           <Route path="support" element={<SupportPage />} />
           <Route path="news" element={<NewsPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/vnpay-return" element={<VnpayReturn />} />
         </Route>
 
         {/* ================================== */}
